@@ -5,6 +5,10 @@ import {connect} from 'react-redux';
 import './App.css';
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comment/Comment';
+import Review from '../Review/Review';
+import ThankYou from '../ThankYou/ThankYou'
 
 
 
@@ -20,10 +24,22 @@ class App extends Component {
             </header>
             <br/>
             <Route path="/" exact>
-            <Feeling/>
+              <Feeling/>
             </Route>
             <Route path="/2" exact>
-            <Understanding/>
+              <Understanding/>
+           </Route>
+            <Route path="/3" exact>
+              <Support/>
+            </Route>
+            <Route path="/4" exact>
+              <Comments/>
+            </Route>
+            <Route path="/5" exact>
+              <Review/>
+            </Route>
+            <Route path="/6" exact>
+              <ThankYou/>
             </Route>
         </Router>
       </div>

@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 
 
 const addFeeling = (state = [], action) => {
+    console.log('this is our feeling rating', action.payload)
     if(action.type === "ADD_FEELING"){
         return[...state, action.payload]
     }
