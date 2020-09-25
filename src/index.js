@@ -8,11 +8,17 @@ import { createStore, combineReducers} from 'redux';
 import { Provider } from 'react-redux';
 
 
+const addFeeling = (state = [], action) => {
+    if(action.type === "ADD_FEELING"){
+        return[...state, action.payload]
+    }
+    return state;
+}
 
 //adding store
 const storeInstance = createStore(
     combineReducers({
-
+        addFeeling
     }),
 );
 

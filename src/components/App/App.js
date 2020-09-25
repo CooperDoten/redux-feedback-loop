@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import './App.css';
 import Feeling from '../Feeling/Feeling'
+import Understanding from '../Understanding/Understanding';
+
 
 
 class App extends Component {
@@ -17,7 +19,12 @@ class App extends Component {
               <h4><i>Don't forget it!</i></h4>
             </header>
             <br/>
+            <Route path="/" exact>
             <Feeling/>
+            </Route>
+            <Route path="/2" exact>
+            <Understanding/>
+            </Route>
         </Router>
       </div>
     );
