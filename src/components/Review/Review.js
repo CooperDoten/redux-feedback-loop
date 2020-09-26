@@ -3,7 +3,7 @@ import axios from 'axios';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-
+import Button from '@material-ui/core/Button';
 
 
 class Review extends Component {
@@ -26,7 +26,7 @@ class Review extends Component {
    make sure they fill out all the necessary inputs to submit
    */
     return (
-      <div className="App">
+      <div className="fb-div">
          <Router>
           <table>
             <thead>
@@ -46,7 +46,7 @@ class Review extends Component {
               </tr>
             </tbody>
           </table>
-          <button onClick={this.onNext}>Submit</button>
+          <Button onClick={this.onNext}>Submit</Button>
         </Router>
       </div>
      

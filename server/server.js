@@ -16,10 +16,8 @@ app.post('/feedback',  (req, res) => {
     let addSupport = Number(newFeedback.addSupport);
     let addComment = newFeedback.addComment.toString();
     console.log(`Adding review`, newFeedback);
-  
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;
-
     pool.query(queryText, [addFeeling, addUnderstanding, addSupport, addComment])
       .then(result => {
         res.sendStatus(201);

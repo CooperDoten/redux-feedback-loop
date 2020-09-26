@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom'
-
+import {withRouter} from 'react-router-dom';
+import './Comment.css';
+import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
 
 
 class Comment extends Component {
@@ -33,12 +35,21 @@ class Comment extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="fb-div">
          <Router>
-          <input type="text" 
-                  placeholder="comments"
-                  onChange={this.addComments}/>
-          <button onClick={this.onNext}>Next</button>
+         <div className="fb-input-wrapper">
+            <TextField 
+                    id="filled-multiline-static"
+                    multiline
+                    rows={4}
+                    label="Comments"
+                    variant="filled"
+                    type="text" 
+                    onChange={this.addComments}/>
+            <Button onClick={this.onNext}
+                    variant="contained" 
+                    color="primary">Next</Button>
+          </div>
         </Router>
       </div>
      

@@ -8,7 +8,6 @@ import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
 const addFeeling = (state = [], action) => {
     if(action.type === "ADD_FEELING"){
         console.log('this is our feeling rating', action.payload);
@@ -37,8 +36,6 @@ const addComment = (state = [], action) => {
     }
     return state;
 }
-
-
 //adding store
 const storeInstance = createStore(
     combineReducers({
