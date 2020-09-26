@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
@@ -7,6 +8,15 @@ import {withRouter} from 'react-router-dom'
 
 class Review extends Component {
   onNext= () => {
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: this.props.reduxState
+    }).then(response => {
+      console.log('POST /feedback', response);
+    }).catch(err => {
+      console.err('POST err', err);
+    });
     //props.history.push(this is what page we are pushing to)
     this.props.history.push('/6');
   }
