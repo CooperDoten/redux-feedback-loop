@@ -30,7 +30,7 @@ class Feeling extends Component {
         //send a feeling 
         type: "ADD_FEELING",
         payload: this.state.feeling
-      })
+      });
       //props.history.push(this is what page we are pushing to)
       this.props.history.push('/2');
     }

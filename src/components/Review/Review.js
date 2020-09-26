@@ -11,7 +11,7 @@ class Review extends Component {
     axios({
       method: 'POST',
       url: '/feedback',
-      data: this.props.reduxState
+      data: this.props.reduxState.feedBack
     }).then(response => {
       console.log('POST /feedback', response);
     }).catch(err => {

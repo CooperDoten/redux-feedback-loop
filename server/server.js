@@ -11,10 +11,10 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 app.post('/feedback',  (req, res) => {
     let newFeedback = req.body;
-    let addFeeling = Number(newFeedback.addFeeling);
-    let addUnderstanding = Number(newFeedback.addUnderstanding);
-    let addSupport = Number(newFeedback.addSupport);
-    let addComment = newFeedback.addComment.toString();
+    let addFeeling = Number(newFeedback.feeling);
+    let addUnderstanding = Number(newFeedback.understanding);
+    let addSupport = Number(newFeedback.support);
+    let addComment = newFeedback.comment;
     console.log(`Adding review`, newFeedback);
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;

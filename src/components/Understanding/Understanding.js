@@ -27,7 +27,7 @@ class Understanding extends Component {
       //send understanding
       type: "ADD_UNDERSTANDING",
       payload: this.state.understanding
-    })
+    });
     //props.history.push(this is what page we are pushing to)
     this.props.history.push('/3');
     }

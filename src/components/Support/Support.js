@@ -26,7 +26,7 @@ class Support extends Component {
       //send some support SOS!!
       type: "ADD_SUPPORT",
       payload: this.state.support
-    })
+    });
     //props.history.push(this is what page we are pushing to)
      this.props.history.push('/4');
     }

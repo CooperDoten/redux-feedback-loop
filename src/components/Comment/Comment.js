@@ -28,7 +28,7 @@ class Comment extends Component {
         //send a feeling 
         type: "ADD_COMMENT",
         payload: this.state.comment
-      })
+      });
         //props.history.push(this is what page we are pushing to)
         this.props.history.push('/5');
     }
