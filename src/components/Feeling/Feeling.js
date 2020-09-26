@@ -20,6 +20,7 @@ addingFeelings = (event) => {
 
   onNext= () => {
     this.props.dispatch({
+      //send a feeling 
       type: "ADD_FEELING",
       payload: this.state.feeling
     })
@@ -33,7 +34,9 @@ addingFeelings = (event) => {
          <Router> 
            <h3>How are you feeling today?</h3>
           <input type="number" placeholder="Feeling"
+              //onChange capture feeling
               onChange={this.addingFeelings}/>
+              {/*onClick send state of feeling to onNext */}
           <button onClick={this.onNext}>Next</button>
         </Router>
       </div>
