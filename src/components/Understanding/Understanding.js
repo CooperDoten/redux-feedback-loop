@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 
@@ -8,7 +7,7 @@ import {withRouter} from 'react-router-dom'
 
 class Understanding extends Component {
   state={
-    understanding: 0
+    understanding: ''
   }
   addingUnderstanding = (event) => {
     this.setState({
@@ -17,15 +16,20 @@ class Understanding extends Component {
     console.log(this.state.understanding);
   }
 
-    onNext= () => {
-      this.props.dispatch({
-        //send understanding
-        type: "ADD_UNDERSTANDING",
-        payload: this.state.understanding
-      })
-        //props.history.push(this is what page we are pushing to)
-        this.props.history.push('/3');
-          }  
+  onNext= () => {
+    if(this.state.understanding === ''){
+      alert('Please add a rating to continue');
+    }
+    else{
+    this.props.dispatch({
+      //send understanding
+      type: "ADD_UNDERSTANDING",
+      payload: this.state.understanding
+    })
+    //props.history.push(this is what page we are pushing to)
+    this.props.history.push('/3');
+    }
+  }  
   render() {
     console.log(this.state.understanding)
     return (

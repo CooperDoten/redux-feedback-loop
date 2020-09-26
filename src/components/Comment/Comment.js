@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 
@@ -19,14 +18,19 @@ class Comment extends Component {
   }
   
   onNext= () => {
-    this.props.dispatch({
-      //send a feeling 
-      type: "ADD_COMMENT",
-      payload: this.state.comment
-    })
-      //props.history.push(this is what page we are pushing to)
-      this.props.history.push('/5');
-          }
+    if(this.state.comment === ''){
+      alert('Please add a comment to continue');
+    }
+    else{
+      this.props.dispatch({
+        //send a feeling 
+        type: "ADD_COMMENT",
+        payload: this.state.comment
+      })
+        //props.history.push(this is what page we are pushing to)
+        this.props.history.push('/5');
+    }
+  }
   render() {
     return (
       <div className="App">

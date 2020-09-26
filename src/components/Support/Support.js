@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 
@@ -8,7 +7,7 @@ import {withRouter} from 'react-router-dom'
 
 class Support extends Component {
   state={
-    support: 0
+    support: ''
   }
   addSupport = (event) => {
     this.setState({
@@ -18,6 +17,10 @@ class Support extends Component {
   }
   
   onNext= () => {
+    if(this.state.support === ''){
+      alert('Please add a rating to continue');
+    }
+    else{
     this.props.dispatch({
       //send some support SOS!!
       type: "ADD_SUPPORT",
@@ -25,7 +28,8 @@ class Support extends Component {
     })
     //props.history.push(this is what page we are pushing to)
      this.props.history.push('/4');
-        }
+    }
+  }
   render() {
     return (
       <div className="App">
