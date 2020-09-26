@@ -18,6 +18,24 @@ class Review extends Component {
     return (
       <div className="App">
          <Router>
+          <table>
+            <thead>
+              <tr>
+                <th>Feeling</th>
+                <th>Understanding</th>
+                <th>Support</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td>{this.props.reduxState.addFeeling}</td>
+                  <td>{this.props.reduxState.addUnderstanding}</td>
+                  <td>{this.props.reduxState.addSupport}</td>
+                  <td>{this.props.reduxState.addComment}</td>
+              </tr>
+            </tbody>
+          </table>
           <button onClick={this.onNext}>Submit</button>
         </Router>
       </div>
@@ -25,5 +43,10 @@ class Review extends Component {
     );
   }
 }
+const mapStateToProps = (reduxState) => {
+  return{
+    reduxState
+  }
+}
 
-export default connect()(withRouter((Review)));
+export default connect(mapStateToProps)(withRouter((Review)));
