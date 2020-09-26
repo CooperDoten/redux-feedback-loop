@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import {Button, Card, CardContent} from '@material-ui/core';
 
 
 
@@ -19,10 +19,12 @@ class ThankYou extends Component {
     return (
       <div className="fb-div">
          <Router>
-         <div className="fb-input-wrapper">
-              <p>THANK YOU FOR SUBMITTING</p>
-            <Button onClick={this.onNext}>Review Again</Button>
-          </div>
+         <Card className="fb-input-wrapper">
+             <CardContent>
+              <h1>Thank you for submitting</h1>
+              <Button onClick={this.onNext}>Review Again</Button>
+            </CardContent>
+          </Card>
         </Router>
       </div>
      

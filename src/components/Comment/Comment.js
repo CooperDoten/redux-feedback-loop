@@ -3,8 +3,7 @@ import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import './Comment.css';
-import Button from '@material-ui/core/Button';
-import { TextField } from '@material-ui/core';
+import { TextField, Button, Card, CardContent } from '@material-ui/core';
 
 
 class Comment extends Component {
@@ -37,19 +36,22 @@ class Comment extends Component {
     return (
       <div className="fb-div">
          <Router>
-         <div className="fb-input-wrapper">
-            <TextField 
-                    id="filled-multiline-static"
-                    multiline
-                    rows={4}
-                    label="Comments"
-                    variant="filled"
-                    type="text" 
-                    onChange={this.addComments}/>
-            <Button onClick={this.onNext}
-                    variant="contained" 
-                    color="primary">Next</Button>
-          </div>
+         <Card className="fb-input-wrapper">
+             <CardContent>
+               <h1 className="fb-h1">Please comment on how you felt about your day</h1>
+                <TextField 
+                  id="filled-multiline-static"
+                  multiline
+                  rows={4}
+                  label="Comments"
+                  variant="filled"
+                  type="text" 
+                  onChange={this.addComments}/>
+                <Button onClick={this.onNext}
+                  variant="contained" 
+                  color="primary">Next</Button>
+            </CardContent>
+          </Card>
         </Router>
       </div>
      

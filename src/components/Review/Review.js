@@ -3,7 +3,7 @@ import axios from 'axios';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-import Button from '@material-ui/core/Button';
+import {Button, Table, Box} from '@material-ui/core';
 
 
 class Review extends Component {
@@ -26,28 +26,33 @@ class Review extends Component {
    make sure they fill out all the necessary inputs to submit
    */
     return (
-      <div className="fb-div">
-         <Router>
-          <table>
-            <thead>
-              <tr>
-                <th>Feeling</th>
-                <th>Understanding</th>
-                <th>Support</th>
-                <th>Comment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                  <td>{this.props.reduxState.addFeeling}</td>
-                  <td>{this.props.reduxState.addUnderstanding}</td>
-                  <td>{this.props.reduxState.addSupport}</td>
-                  <td>{this.props.reduxState.addComment}</td>
-              </tr>
-            </tbody>
-          </table>
-          <Button onClick={this.onNext}>Submit</Button>
-        </Router>
+      <div className="review-div">
+        <div className="fb-div">
+          <Router>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Feeling</th>
+                  <th>Understanding</th>
+                  <th>Support</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{this.props.reduxState.feedBack.feeling}</td>
+                    <td>{this.props.reduxState.feedBack.understanding}</td>
+                    <td>{this.props.reduxState.feedBack.support}</td>
+                    <td>{this.props.reduxState.feedBack.comment}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Router>
+        </div>
+          <Box 
+            className="review-btn-div">
+           <Button onClick={this.onNext}>Submit</Button>
+          </Box>
       </div>
      
     );

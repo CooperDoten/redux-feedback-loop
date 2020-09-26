@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import { TextField } from '@material-ui/core';
+import { TextField, Button, Card, CardContent } from '@material-ui/core';
 
 
 
@@ -37,19 +36,21 @@ class Understanding extends Component {
     return (
       <div className="fb-div">
          <Router>
-          <div className="fb-input-wrapper">
-          <h1 className="fb-h1">How was your understanding today?</h1>
-            <TextField
+            <Card className="fb-input-wrapper">
+             <CardContent>
+                <h1 className="fb-h1">How was your understanding today?</h1>
+                <TextField
                   type="number" 
                   required id="standard-required" 
                   label="Required"
                   placeholder="1-10"
                   onChange={this.addingUnderstanding}/>
-            <Button
+                <Button
                     onClick={this.onNext}
                     variant="contained" 
                     color="primary">Next</Button>
-          </div>
+            </CardContent>
+          </Card>
         </Router>
       </div>
      
