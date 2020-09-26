@@ -30,13 +30,22 @@ const addSupport = (state = [], action) => {
     }
     return state;
 }
+const addComment = (state = [], action) => {
+    if(action.type === "ADD_COMMENT"){
+        console.log('these are our comments', action.payload);
+        return [...state, action.payload]
+    }
+    return state;
+}
+
 
 //adding store
 const storeInstance = createStore(
     combineReducers({
         addFeeling,
         addUnderstanding,
-        addSupport
+        addSupport,
+        addComment
     }),
     applyMiddleware(logger)
 );
