@@ -1,18 +1,23 @@
 table, th, tr, td {
     border-collapse: collapse;
-    border: 2px solid black;
+    border: .5px solid black;
     text-align: center;
-    width: 20px
 }
-th{
-    background-color: #89859C;
+body{
+    background: #FEF9EF;
 }
-table tr:nth-child(odd){ 
-    background: #cbd3de;
-}
-table tr:nth-child(even){
-    background: #fcfcfc;
-}
+
 table{
     width: 90%;
+    margin: 0 auto;
 }
+th{
+    background-color: #56C8BE;
+    width: 20px;
+    height: 40px;
+    color: #fff;
+}
+.table-div{
+    display: flex;
+    justify-content: center;
+  }
