@@ -19,18 +19,13 @@ class Comment extends Component {
   }
   //check if user has input
   onNext= () => {
-    if(this.state.comment === ''){
-      alert('Please add a comment to continue');
-    }
-    else{
-      this.props.dispatch({
-        //send a comment
-        type: "ADD_COMMENT",
-        payload: this.state.comment
-      });
-        //push to next page on NEXT click
-        this.props.history.push('/5');
-    }
+    this.props.dispatch({
+      //send a comment
+      type: "ADD_COMMENT",
+      payload: this.state.comment
+    });
+    //push to next page on NEXT click
+    this.props.history.push('/5');
   }
   onBack = () => {
     //push to previous page on BACK click
