@@ -15,7 +15,6 @@ let initialState = {
     support: '',
     comment: ''
 }
-let adminReview = [];
 
 const feedBack = (state = initialState, action) => {
     if(action.type === "ADD_FEELING"){
@@ -40,16 +39,13 @@ const feedBack = (state = initialState, action) => {
     }
     return state;
 }
-const adminTable = (state = adminReview, action) => {
+const adminTable = (state = [], action) => {
     if(action.type === "SET_ADMIN_REVIEW"){
         console.log('this is our table data', action.payload);
-        return {...state,  
-               adminReview: action.payload}
+        return action.payload
     }
     return state;
 }
-
-//adding store
 const storeInstance = createStore(
     combineReducers({
         feedBack,

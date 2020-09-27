@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import { HashRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom'
-import {Button, Table, Box} from '@material-ui/core';
-
-
-
+import {withRouter} from 'react-router-dom';
 
 class TableItem extends Component {
 
   render() {
 
     return (
-      <div className="review-div">
-        <div className="fb-div">
-          <Router>
-
-               
-          </Router>
-        </div>
-      </div>
-     
+      <tr>
+          <td>{this.props.id}</td>
+          <td>{this.props.feeling}</td>
+          <td>{this.props.understanding}</td>
+          <td>{this.props.support}</td>
+          <td>{this.props.comment}</td>
+      </tr>
     );
   }
 }

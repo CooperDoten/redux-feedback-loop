@@ -21,10 +21,28 @@ const theme = createMuiTheme({
             main: '#ffc6ff'
         }
     }
-})
+});
+
 
 
 class App extends Component {
+  componentDidMount() {
+    this.getFeedback();
+  }  
+  getFeedback = () => {
+    axios({
+      method: 'GET',
+      url: '/feedback',
+    }).then(response => {
+      console.log('GET /feedback', response);
+      this.props.dispatch({
+          type: 'SET_ADMIN_REVIEW',
+          payload: response.data
+      });
+    }).catch(err => {
+      console.err('GET err', err);
+    });
+  }
   render() {
     return (
       
