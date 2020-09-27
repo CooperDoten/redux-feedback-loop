@@ -17,8 +17,8 @@ class Feeling extends Component {
   }
 
   onNext= () => {
-    if(this.state.feeling === ''){
-      alert('Please add a rating to continue');
+    if(this.state.feeling === '' || this.state.feeling < 1 || this.state.feeling > 10){
+      alert('Please enter a rating between 1-10 to continue');
     }
     else{
       this.props.dispatch({

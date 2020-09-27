@@ -48,7 +48,7 @@ class Comment extends Component {
                   type="text" 
                   onChange={this.addComments}/>
                 <Button onClick={this.onNext}
-                  className="review"
+                  id="review"
                   variant="contained" 
                   color="primary">Next</Button>
             </CardContent>
