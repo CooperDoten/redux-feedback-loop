@@ -37,7 +37,20 @@ app.post('/feedback',  (req, res) => {
         res.sendStatus(500);  
     });
 })
+app.delete(`/feedback/:id`, (req, res) => {    
+  let id = req.params.id; // id of the thing to delete
+  console.log('Delete route called with id of', id);
+  const queryText = `DELETE FROM "feedback" WHERE "id" = $1;`
+  pool.query(queryText, [id])
+  .then((response)=> {
+    console.log('Deleted');
+    res.sendStatus(200);
+  }).catch((err) => {
+  console.log('error herre in router.delete', err);
+  res.sendStatus(500);
 
+  })
+});
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
     console.log('Listening on port: ', PORT);

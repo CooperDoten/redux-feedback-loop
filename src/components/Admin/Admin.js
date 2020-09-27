@@ -20,6 +20,7 @@ class Admin extends Component {
                   <th>Understanding</th>
                   <th>Support</th>
                   <th>Comment</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
