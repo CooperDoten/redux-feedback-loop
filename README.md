@@ -19,7 +19,7 @@ _Duration: Weekend_
 - created DB and use postgresql to work with database
 
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](https://agile-chamber-73862.herokuapp.com/#/)
 
 ## Screen Shots
 ![Feelings](public/images/feedback.png)
