@@ -72,7 +72,7 @@ class App extends Component {
               <ThankYou/>
             </Route>
             <Route path="/admin" exact>
-              <Admin/>
+              <Admin getFeedback ={this.getFeedback}/>
             </Route>
           </Router>
         </ThemeProvider>

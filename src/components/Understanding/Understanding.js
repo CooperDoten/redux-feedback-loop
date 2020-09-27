@@ -31,6 +31,9 @@ class Understanding extends Component {
     this.props.history.push('/3');
     }
   }  
+  onBack = () => {
+    this.props.history.push('/')
+  }
   render() {
     console.log(this.state.understanding)
     return (
@@ -49,6 +52,10 @@ class Understanding extends Component {
                     onClick={this.onNext}
                     variant="contained" 
                     color="primary">Next</Button>
+                <Button
+                    onClick={this.onBack}
+                    variant="contained" 
+                    color="secondary">Back</Button>
             </CardContent>
           </Card>
         </Router>

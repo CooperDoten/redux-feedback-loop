@@ -32,6 +32,9 @@ class Comment extends Component {
         this.props.history.push('/5');
     }
   }
+  onBack = () => {
+    this.props.history.push('/3');
+  }
   render() {
     return (
       <div className="fb-div">
@@ -51,6 +54,11 @@ class Comment extends Component {
                   id="review"
                   variant="contained" 
                   color="primary">Next</Button>
+                <Button
+                    id="review"
+                    onClick={this.onBack}
+                    variant="contained" 
+                    color="secondary">Back</Button>
             </CardContent>
           </Card>
         </Router>

@@ -31,7 +31,8 @@ class Admin extends Component {
                         feeling={item.feeling}
                         understanding={item.understanding}
                         support={item.support}
-                        comment={item.comments}/>
+                        comment={item.comments}
+                        getFeedback={this.props.getFeedback}/>
                     );
                   })}
               </tbody>

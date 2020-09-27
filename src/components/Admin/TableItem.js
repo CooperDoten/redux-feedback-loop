@@ -4,6 +4,9 @@ import {withRouter} from 'react-router-dom';
 
 class TableItem extends Component {
 
+componentDidMount() {
+    this.props.getFeedback();
+}
   render() {
 
     return (

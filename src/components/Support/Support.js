@@ -30,6 +30,9 @@ class Support extends Component {
      this.props.history.push('/4');
     }
   }
+  onBack = () => {
+    this.props.history.push('/2');
+  }
   render() {
     return (
       <div className="fb-div">
@@ -46,6 +49,10 @@ class Support extends Component {
                 <Button onClick={this.onNext}
                   variant="contained" 
                   color="primary">Next</Button>
+                <Button
+                    onClick={this.onBack}
+                    variant="contained" 
+                    color="secondary">Back</Button>
             </CardContent>
           </Card>
         </Router>
