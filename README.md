@@ -5,8 +5,6 @@
 
 _Duration: Weekend_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
-
 - I built an app that took had 8 seperate components to collect user feedback and submit it to a database of 'feedback'.
 - Each component had its own question and allowed the user to either enter a numeric value or leave a comment. 
 - on Next click, user is taken to next page
@@ -24,13 +22,13 @@ Directly above this is how long it took you to develop the project. Your project
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
 ## Screen Shots
-- [Feelings](public/images/feedback.png)
-- [Understanding](public/images/understanding.png)
-- [Support](public/images/support.png)
-- [Comments](public/images/comment.png)
-- [Review](public/images/review.png)
-- [Thank You](public/images/thankYou.png)
-- [Admin Table](public/images/adminTable.png)
+![Feelings](public/images/feedback.png)
+![Understanding](public/images/understanding.png)
+![Support](public/images/support.png)
+![Comments](public/images/comment.png)
+![Review](public/images/review.png)
+![Thank You](public/images/thankYou.png)
+![Admin Table](public/images/adminTable.png)
 
 ### Prerequisites
 
