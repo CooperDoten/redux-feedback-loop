@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
+//POST route to grab new values and add to DB
 app.post('/feedback',  (req, res) => {
     let newFeedback = req.body;
     let addFeeling = Number(newFeedback.feeling);
@@ -27,7 +28,7 @@ app.post('/feedback',  (req, res) => {
         res.sendStatus(500);
       });
   });
- 
+ //GET route to get all feedback from DB
   app.get('/feedback', (req, res) => {
     // Find all orders and return them
     pool.query('SELECT * FROM "feedback" ORDER BY "id" DESC;').then((result) => {
@@ -37,6 +38,7 @@ app.post('/feedback',  (req, res) => {
         res.sendStatus(500);  
     });
 })
+//DELETE route to delete review at /id of review
 app.delete(`/feedback/:id`, (req, res) => {    
   let id = req.params.id; // id of the thing to delete
   console.log('Delete route called with id of', id);
@@ -48,7 +50,6 @@ app.delete(`/feedback/:id`, (req, res) => {
   }).catch((err) => {
   console.log('error herre in router.delete', err);
   res.sendStatus(500);
-
   })
 });
 /** ---------- START SERVER ---------- **/
