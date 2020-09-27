@@ -17,7 +17,7 @@ class Support extends Component {
   }
   
   onNext= () => {
-    if(this.state.support === '' || this.state.feeling < 1 || this.state.feeling > 10){
+    if(this.state.support === '' || this.state.support < 1 || this.state.support > 10){
       alert('Please add a rating between 1-10 to continue');
     }
     else{

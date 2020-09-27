@@ -8,8 +8,20 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comment/Comment';
 import Review from '../Review/Review';
-import ThankYou from '../ThankYou/ThankYou'
+import ThankYou from '../ThankYou/ThankYou';
+import Admin from '../Admin/Admin';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#74F2CE'
+        },
+        secondary: {
+            main: '#ffc6ff'
+        }
+    }
+})
 
 
 class App extends Component {
@@ -17,10 +29,10 @@ class App extends Component {
     return (
       
       <div className="App">
+        <ThemeProvider theme={theme}>
           <Router>
             <header className="App-header">
-              <h1 className="App-title">Feedback!</h1>
-              <h4><i>Don't forget it!</i></h4>
+              <h1 className="App-title">Prime Feedback Portal</h1>
             </header>
             <br/>
             <Route path="/" exact>
@@ -41,7 +53,11 @@ class App extends Component {
             <Route path="/6" exact>
               <ThankYou/>
             </Route>
-        </Router>
+            <Route path="/admin" exact>
+              <Admin/>
+            </Route>
+          </Router>
+        </ThemeProvider>
       </div>
     );
   }

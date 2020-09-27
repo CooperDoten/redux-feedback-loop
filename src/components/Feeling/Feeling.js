@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { TextField, Button, Card, CardContent } from '@material-ui/core';
 import './Feeling.css'
+
 class Feeling extends Component {
 
   state={

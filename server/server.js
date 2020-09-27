@@ -27,6 +27,16 @@ app.post('/feedback',  (req, res) => {
         res.sendStatus(500);
       });
   });
+ 
+  app.get('/feedback', (req, res) => {
+    // Find all orders and return them
+    pool.query('SELECT * FROM "feedback" ORDER BY "id" DESC;').then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error GET ', error);
+        res.sendStatus(500);  
+    });
+})
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
