@@ -5,21 +5,23 @@ import {withRouter} from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 class TableItem extends Component {
-
+//use our GET function to grab data
 componentDidMount() {
     this.props.getFeedback();
 }
+//DELETE tr based on ID of feedback
 onDelete = () => {
-  console.log('in on delete', this.props.id)
-    axios({
-        method: 'DELETE',
-        url: `/feedback/${this.props.id}`
-    }).then((response) => {
-        this.props.getFeedback();
-    });
+  console.log('in on delete', this.props.id);
+  axios({
+    method: 'DELETE',
+    //send DELETE to ID of the item that was clicked
+    url: `/feedback/${this.props.id}`
+  }).then((response) => {
+    //refresh page
+    this.props.getFeedback();
+  });
 }
   render() {
-
     return (
       <tr>
           <td>{this.props.id}</td>
@@ -38,5 +40,4 @@ const mapStateToProps = (reduxState) => {
     reduxState
   }
 }
-
 export default connect(mapStateToProps)(withRouter((TableItem)));

@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 import {Button, Table, Box} from '@material-ui/core';
 
-
 class Review extends Component {
+  //AXIOS POST to send new data to DB
   onNext= () => {
     axios({
       method: 'POST',
@@ -17,14 +17,10 @@ class Review extends Component {
     }).catch(err => {
       console.err('POST err', err);
     });
-    //props.history.push(this is what page we are pushing to)
+    //push to next page on NEXT click
     this.props.history.push('/6');
   }
   render() {
-   /*
-   to do:
-   make sure they fill out all the necessary inputs to submit
-   */
     return (
       <div className="review-div">
         <div className="fb-div">
@@ -65,5 +61,4 @@ const mapStateToProps = (reduxState) => {
     reduxState
   }
 }
-
 export default connect(mapStateToProps)(withRouter((Review)));

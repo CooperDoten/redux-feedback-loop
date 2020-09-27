@@ -4,18 +4,19 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { TextField, Button, Card, CardContent } from '@material-ui/core';
 
-
 class Support extends Component {
+  //set initial state for user validation
   state={
     support: ''
   }
+  //set state equal to user input
   addSupport = (event) => {
     this.setState({
       support: event.target.value
     });
     console.log(this.state.support);
   }
-  
+  //validate user input
   onNext= () => {
     if(this.state.support === '' || this.state.support < 1 || this.state.support > 10){
       alert('Please add a rating between 1-10 to continue');
@@ -26,18 +27,19 @@ class Support extends Component {
       type: "ADD_SUPPORT",
       payload: this.state.support
     });
-    //props.history.push(this is what page we are pushing to)
+    //push to next page on NEXT click
      this.props.history.push('/4');
     }
   }
   onBack = () => {
+    //return to previous page on BACK click
     this.props.history.push('/2');
   }
   render() {
     return (
       <div className="fb-div">
          <Router>
-         <Card className="fb-input-wrapper">
+            <Card className="fb-input-wrapper">
              <CardContent>
                 <h1 className="fb-h1">How supported do you feel today?</h1>
                 <TextField
@@ -50,16 +52,14 @@ class Support extends Component {
                   variant="contained" 
                   color="primary">Next</Button>
                 <Button
-                    onClick={this.onBack}
-                    variant="contained" 
-                    color="secondary">Back</Button>
-            </CardContent>
-          </Card>
-        </Router>
+                  onClick={this.onBack}
+                  variant="contained" 
+                  color="secondary">Back</Button>
+              </CardContent>
+            </Card>
+          </Router>
       </div>
-     
     );
   }
 }
-
 export default connect()(withRouter((Support)));

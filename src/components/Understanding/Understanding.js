@@ -4,19 +4,19 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { TextField, Button, Card, CardContent } from '@material-ui/core';
 
-
-
 class Understanding extends Component {
+  //set local state
   state={
     understanding: ''
   }
+  //set state to user input
   addingUnderstanding = (event) => {
     this.setState({
       understanding: event.target.value
     });
     console.log(this.state.understanding);
   }
-
+  //user validation client side
   onNext= () => {
     if(this.state.understanding === '' || this.state.understanding < 1 || this.state.understanding > 10){
       alert('Please add a rating between 1-10 to continue');
@@ -27,11 +27,12 @@ class Understanding extends Component {
       type: "ADD_UNDERSTANDING",
       payload: this.state.understanding
     });
-    //props.history.push(this is what page we are pushing to)
+    //push to next page on NEXT click
     this.props.history.push('/3');
     }
   }  
   onBack = () => {
+    //push to previous page on BACK click
     this.props.history.push('/')
   }
   render() {
@@ -64,5 +65,4 @@ class Understanding extends Component {
     );
   }
 }
-
 export default connect()(withRouter((Understanding)));

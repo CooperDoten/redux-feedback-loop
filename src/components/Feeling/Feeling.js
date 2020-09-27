@@ -6,17 +6,18 @@ import { TextField, Button, Card, CardContent } from '@material-ui/core';
 import './Feeling.css'
 
 class Feeling extends Component {
-
+  //set local state
   state={
     feeling: ''
   }
+  //set feelings equal to user input
   addingFeelings = (event) => {
     this.setState({
       feeling: event.target.value
     });
     console.log(this.state.feeling);
   }
-
+ // validate value client side
   onNext= () => {
     if(this.state.feeling === '' || this.state.feeling < 1 || this.state.feeling > 10){
       alert('Please enter a rating between 1-10 to continue');
@@ -27,7 +28,7 @@ class Feeling extends Component {
         type: "ADD_FEELING",
         payload: this.state.feeling
       });
-      //props.history.push(this is what page we are pushing to)
+      //push to next page on NEXT click
       this.props.history.push('/2');
     }
   }
@@ -35,7 +36,7 @@ class Feeling extends Component {
     console.log(this.state.feeling)
     return (
       <div className="fb-div">
-         <Router> 
+        <Router> 
            <Card className="fb-input-wrapper">
              <CardContent>
                 <h1 className="fb-h1">How are you feeling today?</h1>

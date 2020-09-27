@@ -11,21 +11,23 @@ import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
 import Admin from '../Admin/Admin';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-
+//set some primary and secondary color themes
 const theme = createMuiTheme({
     palette: {
-        primary: {
-            main: '#56C8BE'
-        },
-        secondary: {
-            main: '#ffc6ff'
-        }
+      primary: {
+        main: '#56C8BE'
+      },
+      secondary: {
+          main: '#ffc6ff'
+      }
     }
 });
 class App extends Component {
+  //put our GET call into a function
   componentDidMount() {
     this.getFeedback();
-  }  
+  } 
+  //AXIOS GET 
   getFeedback = () => {
     axios({
       method: 'GET',
@@ -33,8 +35,8 @@ class App extends Component {
     }).then(response => {
       console.log('GET /feedback', response);
       this.props.dispatch({
-          type: 'SET_ADMIN_REVIEW',
-          payload: response.data
+        type: 'SET_ADMIN_REVIEW',
+        payload: response.data
       });
     }).catch(err => {
       console.err('GET err', err);
@@ -42,7 +44,6 @@ class App extends Component {
   }
   render() {
     return (
-      
       <div className="App">
         <ThemeProvider theme={theme}>
           <Router>
@@ -77,5 +78,4 @@ class App extends Component {
     );
   }
 }
-
 export default connect()(App);

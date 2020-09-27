@@ -8,6 +8,7 @@ import './Admin.css'
 
 class Admin extends Component {
   render() {
+    //checking what we're working with
      console.log(this.props);
     return (
       <div className="table-div">
@@ -28,6 +29,7 @@ class Admin extends Component {
                 <tbody>
                     {this.props.adminTable.map((item) => {
                       return(
+                        // send that data to child component 
                         <TableItem 
                           key={item.id}
                           id={item.id}
@@ -38,7 +40,7 @@ class Admin extends Component {
                           getFeedback={this.props.getFeedback}/>
                       );
                     })}
-                </tbody>
+                  </tbody>
               </table>
             </CardContent>
           </Card>
@@ -49,8 +51,8 @@ class Admin extends Component {
 }
 const mapStateToProps = (reduxState) => {
   return{
+    //set the value that we will use in this component
     adminTable: reduxState.adminTable
   }
 }
-
 export default connect(mapStateToProps)(withRouter((Admin)));

@@ -5,34 +5,35 @@ import {withRouter} from 'react-router-dom';
 import './Comment.css';
 import { TextField, Button, Card, CardContent } from '@material-ui/core';
 
-
 class Comment extends Component {
-
+  //setting local state
   state={
     comment: ''
   }
+  //set value to user input
   addComments = (event) => {
     this.setState({
       comment: event.target.value
     });
     console.log(this.state.comment);
   }
-  
+  //check if user has input
   onNext= () => {
     if(this.state.comment === ''){
       alert('Please add a comment to continue');
     }
     else{
       this.props.dispatch({
-        //send a feeling 
+        //send a comment
         type: "ADD_COMMENT",
         payload: this.state.comment
       });
-        //props.history.push(this is what page we are pushing to)
+        //push to next page on NEXT click
         this.props.history.push('/5');
     }
   }
   onBack = () => {
+    //push to previous page on BACK click
     this.props.history.push('/3');
   }
   render() {
@@ -63,9 +64,7 @@ class Comment extends Component {
           </Card>
         </Router>
       </div>
-     
     );
   }
 }
-
 export default connect()(withRouter((Comment)));
