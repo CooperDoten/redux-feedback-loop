@@ -22,7 +22,9 @@ class ThankYou extends Component {
          <Card className="fb-input-wrapper">
              <CardContent>
               <h1>Thank you for submitting</h1>
-              <Button onClick={this.onNext}>Review Again</Button>
+              <Button onClick={this.onNext}
+                 variant="contained" 
+                 color="primary">Review Again</Button>
             </CardContent>
           </Card>
         </Router>

@@ -51,7 +51,9 @@ class Review extends Component {
         </div>
           <Box 
             className="review-btn-div">
-           <Button onClick={this.onNext}>Submit</Button>
+           <Button onClick={this.onNext}
+               variant="contained" 
+               color="primary">Submit</Button>
           </Box>
       </div>
      

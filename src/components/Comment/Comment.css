@@ -2,7 +2,7 @@
     height: 100px;
     width: 200px;
 }
-button.MuiButton-root{
-    margin-top: 25%;
+button.MuiButton-root.review{
+    margin-top: 17%;
     margin-left: 10px;
 }
